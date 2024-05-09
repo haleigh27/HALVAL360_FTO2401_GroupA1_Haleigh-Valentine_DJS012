@@ -23,6 +23,13 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
+    // Display error message and replace the entire screen if user inputs anything other than a number.
+    if (isNaN(dividendValue) || isNaN(dividerValue)) {
+        document.body.innerHTML = "<h1>Something critical went wrong. Please reload the page</h1>";
+        console.error("Invalid input: Not a valid number");
+        return;
+    }
+
     //Calculate
     const divisionResult = dividendValue / dividerValue;
     result.innerText = Math.floor(divisionResult);
