@@ -16,6 +16,13 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
+    // Check for invalid division (divider is zero)
+    if (dividerValue === 0) {
+        result.innerText = "Division not performed. Invalid number provided. Try again";
+        console.error("Invalid division: Divider is zero");
+        return;
+    }
+
     //Calculate
     const divisionResult = dividendValue / dividerValue;
     result.innerText = Math.floor(divisionResult);
