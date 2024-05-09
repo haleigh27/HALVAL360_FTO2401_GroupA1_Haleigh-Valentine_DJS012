@@ -10,6 +10,12 @@ form.addEventListener("submit", (event) => {
     const dividendValue = parseFloat(dividend);
     const dividerValue = parseFloat(divider);
 
+    // Validate input values exist
+    if (dividend.trim() === "" || divider.trim() === "") {
+        result.innerText = "Division not performed. Both values are required in inputs. Try again";
+        return;
+    }
+
     //Calculate
     const divisionResult = dividendValue / dividerValue;
     result.innerText = Math.floor(divisionResult);
